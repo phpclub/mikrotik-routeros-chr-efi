@@ -57,7 +57,7 @@ jobs:
 
       - name: Download
         run: |
-          curl -v -k -L --retry 5 --connect-timeout 30 -o chr.img.zip https://download.mikrotik.com/routeros/${{matrix.version}}/chr-${{matrix.version}}.img.zip
+          curl -k -L -C --retry 1 --connect-timeout 60 -o chr.img.zip https://download.mikrotik.com/routeros/${{matrix.version}}/chr-${{matrix.version}}.img.zip
           unzip chr.*.zip
           rm -rf chr.*.zip
 
